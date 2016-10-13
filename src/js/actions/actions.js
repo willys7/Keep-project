@@ -1,8 +1,8 @@
-const addTodoList = (creation, modification, id, color, title) => (
+const addTodoList = (create, modification, id, color, title) => (
   {
     type: 'ADD_TODO_LIST',
     payload:{
-      creation,
+      create,
       modification,
       id,
       color,

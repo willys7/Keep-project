@@ -36,8 +36,9 @@ const Todo = ({ text, completed, onTodoClicked, onTodoRemove }) => (
   </div>
 );
 
-const TodoList = ({ todos, onTodoClicked, color, title, onUpdate, id, currentVisibilityFilter, onArchive, onFilterClicked, onAddTodo, onTodoRemove }) => (
-  <div class = 'element'>
+const TodoList = ({ todos, onTodoClicked, color, title, onUpdate, id, currentVisibilityFilter, onArchive, onFilterClicked, onAddTodo, onTodoRemove, create }) => (
+  <div class = 'element'
+  style={ {backgroundColor: 'yellow' }}>
     <div>
     <Title
       text= {title}
@@ -66,6 +67,9 @@ const TodoList = ({ todos, onTodoClicked, color, title, onUpdate, id, currentVis
     <ArchiveMe
       onArchive = {onArchive}
     />
+    <div>
+    {create}
+    </div>
     <Footer
       currentVisibilityFilter = {currentVisibilityFilter}
       listID = {id}

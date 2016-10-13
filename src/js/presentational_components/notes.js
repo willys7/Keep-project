@@ -2,10 +2,10 @@ import React from 'react';
 import { Title, ArchiveMe } from './filter';
 
 
-const Note = ({ note, onUpdate, id, onArchive }) => (
+const Note = ({ note, onUpdate, id, onArchive, create, update }) => (
   <div 
     class = 'element'
-    style={ {backgroundColor: note.color }}
+    style={ {backgroundColor: 'yellow' }}
   >
     <Title 
       text= {note.title}
@@ -19,7 +19,9 @@ const Note = ({ note, onUpdate, id, onArchive }) => (
     <ArchiveMe
       onArchive = {onArchive}
     />
-  
+  <div>
+  </div>
+  {create}
   </div>
 );
 

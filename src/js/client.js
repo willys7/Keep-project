@@ -109,6 +109,7 @@ const Reminders = ({listsTodos, notes}) =>
                   key = {note.id}
                   id = {note.id}
                   note = {note}
+                  create = {note.creation}
                   onUpdate = {
                     (title) => {
                       store.dispatch(setNoteTitle(note.id, title, Date()) );
@@ -133,6 +134,7 @@ const Reminders = ({listsTodos, notes}) =>
                   color = {listTodo.color}
                   todos = {getVisibleTodos(listTodo.todos, listTodo.visibilityFilter) }
                   title = {listTodo.title}
+                  create = {listTodo.creation}
                   id = {listTodo.id}
                   currentVisibilityFilter = {listTodo.visibilityFilter}
                   onTodoClicked = {
@@ -156,8 +158,8 @@ const Reminders = ({listsTodos, notes}) =>
                     }
                   }
                   onAddTodo = {
-                    (i, t, li, m ) => {
-                      store.dispatch( addTodo(i, t, li, m ) );
+                    (i, t, li, m,create ) => {
+                      store.dispatch( addTodo(i, t, li, m, create ) );
                     }
                   }
                   onTodoRemove = {
@@ -205,13 +207,13 @@ const RemindersApp = ({listsTodos, notes, visibilityFilter}) => (
     />
     <AddReminder
       onAddNote = {
-        (creation,modification,id,color,title,content,archived) => {
-          store.dispatch( addNote(creation,modification,id,color,title,content,archived) );
+        (create,modify,id,color,title,content,archived) => {
+          store.dispatch( addNote(create,modify,id,color,title,content,archived) );
         }
       }
       onAddList = {  
-        (creation,modification,id,color,title,archived) => {
-          store.dispatch( addTodoList(creation,modification,id,color,title,archived) );
+        (create,modify,id,color,title,archived) => {
+          store.dispatch( addTodoList(create,modify,id,color,title,archived) );
         }
       }
     />
@@ -229,6 +231,7 @@ const render = () => {
       { ...store.getState().present } />,
     document.getElementById('root')
   );
+  console.log(store.getState())
 };
 
 render();

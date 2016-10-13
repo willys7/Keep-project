@@ -11,7 +11,7 @@ const Title = ({text, onUpdate, color}) => {
           onChange = {() => onUpdate(input.value)}
           style ={
             {border : 'none'},
-            {backgroundColor: color }
+            {backgroundColor: 'transparent' }
           }
         ></input>
     </div>
@@ -40,7 +40,7 @@ const ArchiveMe = ({ onArchive }) => {
     <div>
       <button
         onClick = {onArchive}
-      >Archive</button>
+      >Archivar</button>
     </div>
   );
 }

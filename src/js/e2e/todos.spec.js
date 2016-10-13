@@ -7,13 +7,13 @@ const testAddTodo = () => {
     type: 'ADD_TODO',
     payload: {
       id: 0,
-      text: 'Limpiar mi casa'
+      text: 'Jugar en el patio'
     }
   }
 
   const stateAfter = [{
     id: 0,
-    text: 'Limpiar mi casa',
+    text: 'Jugar en el patio',
     completed: false
   }];
 
